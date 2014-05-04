@@ -1,0 +1,16 @@
+{% extends "templates/new_template.jinja2" %}
+  {% set banan="old temp" %}
+
+{% block main %}
+    {% set banan="new temp" %}
+    {{ banan }}
+    {{ super() }}
+        {% for i in range(5) %}
+        {{ i }}
+    {% endfor %}
+{% endblock %}
+
+
+{% block content %}
+{{ banan }}
+{% endblock %}

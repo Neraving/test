@@ -1,0 +1,16 @@
+{% extends "templates/home.jinja2" %}
+
+{%  block active_element%}
+    <li><a href="/">Главная</a></li>
+    <li><a href="registration">Личный кабинет</a> </li>
+    <li class="active"><a href="search">Поиск</a></li>
+    <li><a href="about">О сайте</a></li>
+{% endblock %}
+
+{%  block leftblock%}
+    <h1>О сайте</h1>
+	<p>
+        Сайт создан с целью предоставления необходимого функцонала для создания генеалогического древа, поиска своих
+        родственников, систематического сбора информации о неизвестных фактах жизни.
+	</p>
+{% endblock %}

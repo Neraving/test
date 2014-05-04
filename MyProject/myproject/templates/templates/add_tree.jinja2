@@ -1,0 +1,88 @@
+{% extends "templates/home.jinja2" %}
+
+{%  block active_element%}
+    <li><a href="/">Главная</a></li>
+    <li class="active"><a href="profile">Личный кабинет</a> </li>
+    <li><a href="search">Поиск</a></li>
+    <li><a href="about">О сайте</a></li>
+{% endblock %}
+
+{%  block sidebar%}
+    <div id="sidebar">
+		<h2>Действия</h2>
+		<ul>
+			<li><a href="profile">Мой профиль</a></li>
+			<li><a href="trees">Мои древа</a></li>
+			<li class="active"><a href="add">Добавить древо</a></li>
+		</ul>
+	</div>
+{% endblock %}
+
+{%  block leftblock%}
+    <h1>Мои деревья</h1>
+    <h2>Добавьте родственников</h2>
+	<p>
+        <table>
+            <tr><td align="right">Фамилия</td>
+            <td><input type="text" name="surname" size="25"></td></tr>
+
+            <tr><td align="right">Имя</td>
+            <td><input type="text" name="name" size="25"></td></tr>
+
+            <tr><td align="right">Отчество</td>
+            <td><input type="text" name="middle_name" size="25"></td></tr>
+
+            <tr><td align="right">Годы жизни</td>
+            <td><input type="text" name="birth" size="9"> - <input type="text" name="end" size="9"></td></tr>
+
+            <tr><td align="right">Пол</td>
+            <td><input type="radio" name="sex" value="man" checked>мужской
+            <input type="radio" name="sex" value="woman">женский</td></tr>
+
+            <tr><td align="right">Место рождения</td>
+            <td><input type="text" name="birthplace" size="25"></td></tr>
+
+            <tr><td align="center" colspan="2">
+            <input type="button" name="add_button" value="Добавить человека"></td></tr>
+        </table>
+    </p>
+    <h2>Укажите связи</h2>
+    <p>
+        <form method="post">
+            <table>
+                <tr><td align="center">1.
+                    <select size="1" name="people">
+                        <option value="Чебурашка">Чебурашка</option>
+                        <option value="Крокодил Гена">Крокодил Гена</option>
+                        <option value="Шапокляк">Шапокляк</option>
+                        <option value="Крыса Лариса">Крыса Лариса</option>
+                    </select>
+                </td>
+                <td align="center">2.
+                    <select size="1" name="people">
+                        <option value="Чебурашка">Чебурашка</option>
+                        <option value="Крокодил Гена">Крокодил Гена</option>
+                        <option value="Шапокляк">Шапокляк</option>
+                        <option value="Крыса Лариса">Крыса Лариса</option>
+                    </select>
+                </td>
+                <td align="center">1 для 2:
+                    <select size="1" name="relations">
+                        {% for relation in relations %}
+                            <option value = "{{relation}}">{{relation}}</option>
+                        {% endfor %}
+                    </select>
+                </td></tr>
+                <tr><td align="center" colspan="3">
+                <input type="submit" name="submit_relations" value="Добавить связь"></td></tr>
+            </table>
+        </form>
+        <div id="relation_table">
+            <table>
+                {% for relation in relations %}
+                    <option value = "{{relation}}">{{relation}}</option>
+                {% endfor %}
+            </table>
+        </div>
+    </p>
+{% endblock %}

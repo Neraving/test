@@ -1,0 +1,68 @@
+<html>
+	<head>
+        <meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html;" />
+		<title>Genealogical Tree</title>
+		<link href="static/style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="header">
+				<div class="topmenu">
+					<span class="home"><a title="Войти" href="#"><img src="static/homebttn.png" alt="Home" /></a></span>
+				</div>
+				<h1 class="logo"><a href="#">Генеалогическое древо</a>
+				</h1>
+			</div>
+			<div id="mainmenu">
+				<ul>
+                    {%  block active_element%}
+                        <li class="active"><a href="/">Главная</a></li>
+                        <li><a href="profile">Личный кабинет</a></li>
+                        <li><a href="search">Поиск</a></li>
+                        <li><a href="about">О сайте</a></li>
+                    {% endblock %}
+				</ul>
+			</div>
+			<div id="contents">
+{#				<div id="contenttop"></div>#}
+                {%  block sidebar%}
+                    <div id="sidebar">
+                        <h2>Вход</h2>
+                        <form method="post">
+                            <table>
+                                <tr>
+                                    <td align="right">Логин или email</td>
+                                    <td><input type="text" name="email" size="25"></td>
+                                </tr>
+
+                                <tr>
+                                    <td align="right">Пароль</td>
+                                    <td><input type="text" name="password" size="25"></td>
+                                </tr>
+
+                                <tr>
+                                    <td align="center" colspan="2">
+                                    <input type="submit" name="submit" value="Войти">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                {% endblock %}
+				<div id="left">
+                {%  block leftblock%}
+					<h1>Добро пожаловать!</h1>
+					<p>
+                        <img class="align_left" src="static/images/gen_tree.jpg" alt="Genealogic Tree" width="205" height="184" />
+                        Мы рады приветствовать вас на нашем сайте. Здесь вы можете создать генеалогические древа своей семьи.
+                        А также найти информацию о своих родственниках, возможно оставленную другими пользователями нашего проекта.
+                    </p>
+                {% endblock %}
+				</div>
+			</div>
+			<div id="footer">
+			</div>
+		</div>
+	</body>
+</html>

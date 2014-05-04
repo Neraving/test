@@ -1,0 +1,51 @@
+{% extends "templates/home.jinja2" %}
+
+{%  block active_element%}
+    <li><a href="/">Главная</a></li>
+    <li><a href="registration">Личный кабинет</a> </li>
+    <li class="active"><a href="search">Поиск</a></li>
+    <li><a href="about">О сайте</a></li>
+{% endblock %}
+
+{%  block sidebar%}
+    <div id="sidebar">
+		<h2>Действия</h2>
+		<ul>
+			<li class="active"><a href="profile">Мой профиль</a></li>
+			<li><a href="trees">Мои древа</a></li>
+			<li><a href="add">Добавить древо</a></li>
+		</ul>
+	</div>
+{% endblock %}
+
+{%  block leftblock%}
+    <h1>Поиск</h1>
+	<p>
+        <form action="" method="post">
+            <table>
+                <tr><td align="right">Фамилия</td>
+                    <td><input type="text" name="surname" size="25"></td></tr>
+
+                <tr><td align="right">Имя</td>
+                    <td><input type="text" name="name" size="25"></td></tr>
+
+                <tr><td align="right">Отчество</td>
+                    <td><input type="text" name="middle_name" size="25"></td></tr>
+
+                <tr><td align="right">Годы жизни</td>
+                    <td><input type="text" name="birth" size="9"> - <input type="text" name="end" size="9"></td></tr>
+
+                <tr><td align="right">Пол </td>
+                    <td><input type="radio" name="sex" value="man" checked>мужской
+                      <input type="radio" name="sex" value="woman">женский</td></tr>
+
+                <tr><td align="right">Место рождения</td>
+                    <td><input type="text" name="birthplace" size="25"></td></tr>
+
+                <tr><td align="center" colspan="2">
+                     <input type="submit" name="submit" value="Найти"></td>
+                </tr>
+            </table>
+		</form>
+	</p>
+{% endblock %}
